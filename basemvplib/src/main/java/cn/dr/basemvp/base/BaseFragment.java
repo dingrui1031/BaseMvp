@@ -90,7 +90,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            AppUpdateUtils.getInstance().update(getActivity(), false, false);
+            AppUpdateUtils.getInstance().update(getActivity(), false);
         }
     }
 

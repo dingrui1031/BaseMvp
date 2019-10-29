@@ -1,5 +1,6 @@
 package cn.dr.basemvp.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -32,8 +33,7 @@ public class PermissonUtils {
         }
 
         for (String perm : perms) {
-            boolean hasPerm = (PermissionChecker.checkSelfPermission(context, perm) ==
-                    PackageManager.PERMISSION_GRANTED);
+            boolean hasPerm = (PermissionChecker.checkSelfPermission(context, perm) == PermissionChecker.PERMISSION_GRANTED);
             if (!hasPerm) {
                 return false;
             }
@@ -48,7 +48,7 @@ public class PermissonUtils {
     }
 
     //申请权限
-    public static void requestPermission(@NonNull final AppCompatActivity activity, final String tips, final OnPermissionAgreeListener onPermissionAgreeListener, @NonNull String... perms) {
+    public static void requestPermission(@NonNull final Activity activity, final String tips, final OnPermissionAgreeListener onPermissionAgreeListener, @NonNull String... perms) {
         new RxPermissions(activity)
                 .request(perms)
                 .subscribe(new Consumer<Boolean>() {
@@ -67,7 +67,7 @@ public class PermissonUtils {
     }
 
     //显示拒绝后的dialog
-    public static void showAppSettingDialog(final AppCompatActivity activity, String tips) {
+    public static void showAppSettingDialog(final Activity activity, String tips) {
         new MaterialDialog.Builder(activity)
                 .title("提示")
                 .content(tips)

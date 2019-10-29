@@ -44,7 +44,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        AppUpdateUtils.getInstance().update(this, false, false);
+        AppUpdateUtils.getInstance().update(this, false);
     }
 
     /**
