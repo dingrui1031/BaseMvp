@@ -42,9 +42,36 @@
     <uses-permission android:name="android.permission.REORDER_TASKS" />
 
     <application
+        android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-        android:debuggable="true" >
+        android:debuggable="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
         <uses-library android:name="android.test.runner" />
+
+        <provider
+            android:name="com.luck.picture.lib.PictureFileProvider"
+            android:authorities="cn.dr.basemvp.test.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.luck.picture.lib.PictureSelectorActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.luck.picture.lib.PicturePreviewActivity" />
+        <activity
+            android:name="com.luck.picture.lib.PictureVideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor" />
+        <activity android:name="com.luck.picture.lib.PictureExternalPreviewActivity" />
+        <activity android:name="com.yalantis.ucrop.UCropActivity" />
+        <activity android:name="com.yalantis.ucrop.PictureMultiCuttingActivity" />
+        <activity android:name="com.luck.picture.lib.PicturePlayAudioActivity" />
 
         <service android:name="com.vector.update_app.service.DownloadService" />
 
@@ -57,7 +84,24 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/new_app_file_paths" />
         </provider>
+        <provider
+            android:name="com.just.agentweb.AgentWebFileProvider"
+            android:authorities="cn.dr.basemvp.test.AgentWebFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/web_files_public" />
+        </provider>
 
+        <activity
+            android:name="com.just.agentweb.ActionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:launchMode="standard"
+            android:theme="@style/actionActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" >
+        </activity>
         <activity
             android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
             android:theme="@android:style/Theme" >

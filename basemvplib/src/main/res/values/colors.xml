@@ -3,5 +3,10 @@
 
     <color name="themeColor">#FF779F</color>
     <color name="tab_unselect">#717071</color>
+    <color name="black_33">#333333</color>
+    <color name="divider">#f0f0f0</color>
+    <color name="gray_99">#999999</color>
+    <color name="gray_aa">#aaaaaa</color>
+    <color name="gray_e6">#e6e6e6</color>
 
 </resources>

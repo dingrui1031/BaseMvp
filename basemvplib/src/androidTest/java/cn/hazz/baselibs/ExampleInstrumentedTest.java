@@ -1,4 +1,4 @@
-package com.hazz.baselibs;
+package cn.hazz.baselibs;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

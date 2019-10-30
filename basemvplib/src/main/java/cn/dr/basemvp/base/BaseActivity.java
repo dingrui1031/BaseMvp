@@ -36,7 +36,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         if (useEventBus()) {
             EventBus.getDefault().register(this);//注册eventBus
         }
-        initView();
+        initView(savedInstanceState);
         initData();
         initListener();
     }
@@ -149,7 +149,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     /**
      * 初始化View的代码写在这个方法中
      */
-    protected abstract void initView();
+    protected abstract void initView(Bundle savedInstanceState);
 
     /**
      * 初始化监听器的代码写在这个方法中

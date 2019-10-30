@@ -1,4 +1,4 @@
-package com.hazz.baselibs;
+package cn.hazz.baselibs;
 
 import org.junit.Test;
 
