@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/themeColor</item>
+        <item name="colorPrimaryDark">@color/themeColor</item>
+        <item name="colorAccent">@color/themeColor</item>
+        <item name="android:selectableItemBackground">@null</item>
+        <item name="android:selectableItemBackgroundBorderless">@null</item>
+    </style>
+
+    <!--splash-->
+    <style name="SplashTheme" parent="BaseTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <!--anim_fade_in-->
+    <style name="AnimActivityTheme" parent="BaseTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@style/anim_fade</item>
+    </style>
+
+    <style name="anim_fade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_fade_out</item>
+    </style>
+
+    <!--dialog-->
     <style name="my_dialog_style">
         <item name="android:windowFrame">@android:color/transparent</item>
         <item name="android:windowIsFloating">false</item>         <!-- 是否浮现在activity之上 -->

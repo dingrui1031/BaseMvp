@@ -6,9 +6,11 @@ package cn.dr.basemvp.app;
 public class AppConfig {
 
     //基础url
-    public static final String BASE_URL = "http://sj-mdt.basecare.cn/";
+    public static final String BASE_URL = "https://test.basecare.cn/";
     //版本更新
-    public static final String VERSION_UPDATE_URL = "sj/doctor/versions";
-    //极光id更新
-    public static final String UPDATE_JPUSH_ID_URL = "sj/user/add/reg_device_id";
+    public static final String VERSION_UPDATE_URL = "GY/doctor/versions";
+    //极光id更新gy
+    public static final String UPDATE_JPUSH_ID_URL = "GY/user/add/reg_device_id";
+    //登陆
+    public static final String LOGIN_URL = "gy/doctor/login";
 }

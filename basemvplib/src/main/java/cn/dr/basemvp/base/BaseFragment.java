@@ -86,13 +86,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
         initData();
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-            AppUpdateUtils.getInstance().update(getActivity(), false);
-        }
-    }
 
     @Override
     public void onDestroyView() {
@@ -113,7 +106,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment i
                 EventBus.getDefault().unregister(this);//注销eventBus
             }
         }
-        initLeakCanary();
+//        initLeakCanary();
     }
 
 

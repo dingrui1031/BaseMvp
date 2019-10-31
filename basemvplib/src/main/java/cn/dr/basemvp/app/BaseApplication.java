@@ -20,7 +20,7 @@ public class BaseApplication extends Application {
         mContext = this;
         CacheManager.init(this);
         //检测内存泄漏
-        initLeakCanary();
+//        initLeakCanary();
         //注册监听每个activity的生命周期,便于堆栈式管理
         registerActivityLifecycleCallbacks(mCallbacks);
     }

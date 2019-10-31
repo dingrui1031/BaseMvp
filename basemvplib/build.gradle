@@ -115,4 +115,6 @@ dependencies {
     api 'com.cpiz.bubbleview:bubbleview:1.0.2'
     //AgentWeb
     api 'com.just.agentweb:agentweb:4.0.3-alpha@aar'
+    //roundedimageview
+    api 'com.makeramen:roundedimageview:2.3.0'
 }

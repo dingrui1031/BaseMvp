@@ -9,16 +9,16 @@ public class BaseHttpResult<T> implements Serializable {
     private static final long serialVersionUID = 2690553609250007325L;
     public static final int SUCCESS_CODE = 200;
 
-    private int httpcode;
+    private int http_code;
     private String message;
     private T data;
 
     public int getHttpcode() {
-        return httpcode;
+        return http_code;
     }
 
     public void setHttpcode(int httpcode) {
-        this.httpcode = httpcode;
+        this.http_code = httpcode;
     }
 
     public String getMessage() {
@@ -50,7 +50,7 @@ public class BaseHttpResult<T> implements Serializable {
     @Override
     public String toString() {
         return "BaseHttpResult{" +
-                "httpcode=" + httpcode +
+                "httpcode=" + http_code +
                 ", message='" + message + '\'' +
                 ", data=" + data +
                 '}';

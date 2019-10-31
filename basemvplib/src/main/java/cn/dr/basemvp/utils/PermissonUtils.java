@@ -45,6 +45,8 @@ public class PermissonUtils {
     public interface OnPermissionAgreeListener {
         //同意
         void onAgree();
+        //拒绝
+        void onRefuse();
     }
 
     //申请权限
@@ -60,14 +62,14 @@ public class PermissonUtils {
                         } else {
                             // 用户拒绝了该权限，并且选中『不再询问』
                             // 去设置中心设置
-                            showAppSettingDialog(activity, tips);
+                            showAppSettingDialog(activity, tips,onPermissionAgreeListener);
                         }
                     }
                 });
     }
 
     //显示拒绝后的dialog
-    public static void showAppSettingDialog(final Activity activity, String tips) {
+    public static void showAppSettingDialog(final Activity activity, String tips,final OnPermissionAgreeListener onPermissionAgreeListener) {
         new MaterialDialog.Builder(activity)
                 .title("提示")
                 .content(tips)
@@ -76,7 +78,8 @@ public class PermissonUtils {
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-
+                        //拒绝
+                        onPermissionAgreeListener.onRefuse();
                     }
                 })
                 .positiveText("确定")
