@@ -90,8 +90,8 @@ dependencies {
     api 'com.afollestad.material-dialogs:core:0.9.6.0'
     /*BaseRecyclerViewAdapterHelper*/
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
-    /*update-app*/
-    api 'com.qianwen:update-app:3.5.2'
+
+
     /*极光*/
 //    api 'cn.jiguang.sdk:jpush:3.3.6'  // 此处以JPush 3.3.6 版本为例。
 //    api 'cn.jiguang.sdk:jcore:2.1.6'  // 此处以JCore 2.1.6 版本为例。
@@ -103,18 +103,29 @@ dependencies {
     api 'com.contrarywind:Android-PickerView:4.1.9'
     //PictureSelector
     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.4'
-    //语音库
-    api 'com.lqr.audio:library:1.0.0'
-    //AndroidAudioConverter
-    api 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'
-    //gif
-    api 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     //circleimageview
     api 'de.hdodenhof:circleimageview:2.1.0'
-    //bubbleview
-    api 'com.cpiz.bubbleview:bubbleview:1.0.2'
     //AgentWeb
     api 'com.just.agentweb:agentweb:4.0.3-alpha@aar'
     //roundedimageview
     api 'com.makeramen:roundedimageview:2.3.0'
+    //FlycoTabLayout_Lib
+    api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //indexablerecyclerview
+    api 'me.yokeyword:indexablerecyclerview:1.3.0'
+    //expandablelayout
+    api 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    //BasePopup
+    api 'com.github.razerdp:BasePopup-compat-androidx:2.2.1'
+    api 'com.github.razerdp:BasePopup:2.2.1'
+    //filedownloader
+    api 'com.liulishuo.filedownloader:library:1.7.7'
+    //photoview
+    api 'com.bm.photoview:library:1.4.0'
+    //AndroidAudioConverter
+    api 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'
+    /*android-pdf-viewer*/
+    api 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation project(path: ':update-app')
+
 }

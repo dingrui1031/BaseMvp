@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="themeColor">#F2779F</color>
-    <color name="light_themeColor">#66F2779F</color>
+    <color name="themeColor">#FF779F</color>
+    <color name="light_themeColor">#66FF779F</color>
     <color name="white_ff">#ffffff</color>
+    <color name="white_ff_trans_cc">#ccffffff</color>
     <color name="tab_unselect">#717071</color>
     <color name="black_33">#333333</color>
     <color name="black_55">#555555</color>
@@ -11,6 +12,7 @@
     <color name="divider">#f0f0f0</color>
     <color name="gray_99">#999999</color>
     <color name="gray_aa">#aaaaaa</color>
+    <color name="gray_cc">#cccccc</color>
     <color name="gray_e6">#e6e6e6</color>
     <color name="splash_bg_color">#F7F7F7</color>
 

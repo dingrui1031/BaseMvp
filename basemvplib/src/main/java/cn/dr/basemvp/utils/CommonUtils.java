@@ -1,6 +1,7 @@
 package cn.dr.basemvp.utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
@@ -131,4 +132,6 @@ public class CommonUtils {
     public static float getDimens(int resId) {
         return getResource().getDimension(resId);
     }
+
+
 }

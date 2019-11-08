@@ -1,10 +1,13 @@
 package cn.dr.basemvp.net.download;
 
+import android.util.Log;
+
 import cn.dr.basemvp.app.AppConfig;
 import cn.dr.basemvp.net.interceptor.ProgressInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
+import cn.dr.basemvp.utils.ToastUtils;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -74,7 +77,7 @@ public class DownLoadManager {
 
     private interface ApiService {
         @Streaming
-        @GET
+        @GET()
         Observable<ResponseBody> download(@Url String url);
     }
 }

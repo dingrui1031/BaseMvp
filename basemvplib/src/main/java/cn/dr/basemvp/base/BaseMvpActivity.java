@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
+import cn.dr.basemvp.R;
 import cn.dr.basemvp.mvp.BasePresenter;
 import cn.dr.basemvp.mvp.IView;
 

@@ -25,9 +25,10 @@ public class BaseWebView extends BaseActivity {
     private String mTitle;
     private String mUrl;
     private AgentWeb mAgentWeb;
-    private ImageView mLeft;
+    private ImageView mIvBack;
     private TextView mTvTitle;
     private LinearLayout mContainer;
+    private boolean mAgent_back;
 
     @Override
     protected int getLayoutId() {
@@ -38,11 +39,12 @@ public class BaseWebView extends BaseActivity {
     protected void getIntent(Intent intent) {
         mTitle = intent.getStringExtra("title");
         mUrl = intent.getStringExtra("url");
+        mAgent_back = intent.getBooleanExtra("agent_back", true);//是否再web返回上一页之后再结束
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        mLeft = findViewById(R.id.left);
+        mIvBack = findViewById(R.id.iv_back);
         mTvTitle = findViewById(R.id.tv_title);
         mContainer = findViewById(R.id.container);
     }
@@ -50,8 +52,12 @@ public class BaseWebView extends BaseActivity {
     @Override
     protected void initListener() {
         mTvTitle.setText(mTitle == null ? "" : mTitle);
-        mLeft.setOnClickListener(v -> {
-            if (!mAgentWeb.back()) {
+        mIvBack.setOnClickListener(v -> {
+            if (mAgent_back) {
+                if (!mAgentWeb.back()) {
+                    finish();
+                }
+            } else {
                 finish();
             }
         });
@@ -104,7 +110,11 @@ public class BaseWebView extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if (!mAgentWeb.back()) {
+        if (mAgent_back) {
+            if (!mAgentWeb.back()) {
+                finish();
+            }
+        } else {
             finish();
         }
     }

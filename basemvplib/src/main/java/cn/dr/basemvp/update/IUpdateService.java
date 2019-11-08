@@ -2,6 +2,7 @@ package cn.dr.basemvp.update;
 
 import java.util.Map;
 
+import cn.dr.basemvp.app.AppConfig;
 import cn.dr.basemvp.net.BaseHttpResult;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
@@ -23,7 +24,7 @@ public interface IUpdateService {
      *
      * @return
      */
-    @POST("sj/doctor/versions")
+    @POST(AppConfig.VERSION_UPDATE_URL)
     @FormUrlEncoded
     Observable<String> updatePost(@FieldMap Map<String, String> params);
 
@@ -32,6 +33,6 @@ public interface IUpdateService {
      *
      * @return
      */
-    @GET("sj/doctor/versions")
+    @GET(AppConfig.VERSION_UPDATE_URL)
     Observable<String> updateGet(@QueryMap Map<String, String> params);
 }

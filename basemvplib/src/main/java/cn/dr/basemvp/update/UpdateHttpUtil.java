@@ -2,7 +2,6 @@ package cn.dr.basemvp.update;
 
 import androidx.annotation.NonNull;
 
-import com.google.gson.Gson;
 import com.vector.update_app.HttpManager;
 
 import java.io.File;
@@ -15,7 +14,6 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 
 /**
  * dr
@@ -109,7 +107,7 @@ public class UpdateHttpUtil implements HttpManager {
 
             @Override
             public void onSuccess(Object o) {
-                callback.onResponse(new File(path));
+                callback.onResponse(new File(path + "/" + fileName));
             }
 
             @Override

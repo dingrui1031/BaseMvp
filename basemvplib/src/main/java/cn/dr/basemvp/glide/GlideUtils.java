@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.widget.ImageView;
 
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -31,8 +32,7 @@ public class GlideUtils {
             GlideApp.with(context)
                     .load(url)
                     .error(emptyImg)
-                    .placeholder(iv.getDrawable())
-                    .transition(new DrawableTransitionOptions().crossFade())
+                    .placeholder(emptyImg)
                     .into(iv);
         } else {
             loadImage(context, iv, emptyImg, emptyImg);
@@ -53,8 +53,7 @@ public class GlideUtils {
             GlideApp.with(context)
                     .load(url)
                     .error(emptyImg)
-                    .placeholder(iv.getDrawable())
-                    .transition(new DrawableTransitionOptions().crossFade())
+                    .placeholder(emptyImg)
                     .transform(new RoundedCorners(radius)).into(iv);
         } else {
             loadRoundImage(context, iv, emptyImg, emptyImg, radius);
@@ -74,8 +73,7 @@ public class GlideUtils {
             GlideApp.with(context)
                     .load(url)
                     .error(emptyImg)
-                    .placeholder(iv.getDrawable())
-                    .transition(new DrawableTransitionOptions().crossFade())
+                    .placeholder(emptyImg)
                     .transform(new CircleCrop()).into(iv);
         } else {
             loadCircleImage(context, iv, emptyImg, emptyImg);
@@ -131,10 +129,9 @@ public class GlideUtils {
     public static void loadBase64Image(Context context, ImageView iv, String base64, int emptyImg) {
         if (!TextUtils.isEmpty(base64)) {
             GlideApp.with(context)
-                    .load(ConverterUtils.base64Tobyte(base64))
+                    .load(ConverterUtils.base64ToBitmap(base64))
                     .error(emptyImg)
-                    .placeholder(iv.getDrawable())
-                    .transition(new DrawableTransitionOptions().crossFade())
+                    .placeholder(emptyImg)
                     .into(iv);
         } else {
             loadImage(context, iv, emptyImg, emptyImg);
@@ -155,8 +152,7 @@ public class GlideUtils {
             GlideApp.with(context)
                     .load(ConverterUtils.base64Tobyte(base64))
                     .error(emptyImg)
-                    .placeholder(iv.getDrawable())
-                    .transition(new DrawableTransitionOptions().crossFade())
+                    .placeholder(emptyImg)
                     .transform(new RoundedCorners(radius)).into(iv);
         } else {
             loadRoundImage(context, iv, emptyImg, emptyImg, radius);
@@ -176,8 +172,7 @@ public class GlideUtils {
             GlideApp.with(context)
                     .load(ConverterUtils.base64Tobyte(base64))
                     .error(emptyImg)
-                    .placeholder(iv.getDrawable())
-                    .transition(new DrawableTransitionOptions().crossFade())
+                    .placeholder(emptyImg)
                     .transform(new CircleCrop()).into(iv);
         } else {
             loadCircleImage(context, iv, emptyImg, emptyImg);

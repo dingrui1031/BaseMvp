@@ -24,10 +24,6 @@ import cn.dr.basemvp.utils.CommonUtils;
 import cn.dr.basemvp.utils.DisplayUtils;
 import cn.dr.basemvp.utils.SPUtils;
 
-
-/**
- * Created by bruce on 14-10-30.
- */
 public class DonutProgress extends View {
     private Paint finishedPaint;
     private Paint unfinishedPaint;

@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/left"
+        android:id="@+id/iv_back"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_centerVertical="true"
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_marginRight="48dp"
-        android:layout_toRightOf="@+id/left"
+        android:layout_toRightOf="@+id/iv_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

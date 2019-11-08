@@ -27,7 +27,11 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+//        if (netError()){
+//            setContentView(getErrorLayoutId());
+//        }else {
+            setContentView(getLayoutId());
+//        }
         mActivity = this;
         Intent intent = getIntent();
         if (intent != null)
@@ -53,6 +57,14 @@ public abstract class BaseActivity extends RxAppCompatActivity {
      * @return
      */
     protected boolean useEventBus() {
+        return false;
+    }
+
+    /**
+     * 网络状态
+     * @return
+     */
+    protected boolean netError() {
         return false;
     }
 
@@ -116,13 +128,17 @@ public abstract class BaseActivity extends RxAppCompatActivity {
      */
     protected void showLoadingDialog(String title) {
         createLoadingDialog(title);
+        if (!mDialog.isShowing()) {
+            mDialog.show();
+        }
     }
 
     /**
      * 创建LoadingDialog
      */
     private void createLoadingDialog(String title) {
-        mDialog = DialogUtils.showLoadingDialog(this, title);
+        if (mDialog == null)
+            mDialog = DialogUtils.createLoadingDialog(this, title);
     }
 
     /**
@@ -140,6 +156,14 @@ public abstract class BaseActivity extends RxAppCompatActivity {
      */
     protected abstract @LayoutRes
     int getLayoutId();
+
+    /**
+     * 获取Error布局 Id
+     *
+     * @return
+     */
+//    protected abstract @LayoutRes
+//    int getErrorLayoutId();
 
     /**
      * 获取 Intent 数据

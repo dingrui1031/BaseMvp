@@ -40,6 +40,7 @@ public class AppUpdateUtils {
     public void update(final Activity activity, final boolean isShowTip) {
         Map<String, String> params = new HashMap<String, String>();
         params.put("phone_type", "0");//0 安卓 1 ios
+        params.put("user_type", "1");//0 患者端 1 医生端
         new UpdateAppManager
                 .Builder()
                 //必须设置，当前Activity
@@ -103,7 +104,7 @@ public class AppUpdateUtils {
                                     //大小，不设置不显示大小，可以不设置
 //                                    .setTargetSize(jsonObject.optString("target_size"))
                                     //是否强制更新，可以不设置
-                                    .setConstraint(false);
+                                    .setConstraint(true);
                             //设置md5，可以不设置
 //                                    .setNewMd5(jsonObject.optString("new_md51"));
                         } catch (JSONException e) {

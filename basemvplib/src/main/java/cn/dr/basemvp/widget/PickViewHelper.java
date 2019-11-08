@@ -27,13 +27,17 @@ public class PickViewHelper {
     private static TimePickerView pvCustomTime;
     private static OptionsPickerView<OptionModel> pvCustomOptions;
 
-    private interface OnDataReturnListener {
+    public interface OnDateReturnListener {
         //默认时间选择器
         void onReturnDate(Date date);
+    }
 
+    public interface OnThirdOptionReturnListener {
         //默认三级选择器
         void onReturnThirdOption(String option1, String option2, String option3);
+    }
 
+    public interface OnOptionReturnListener {
         //一级选择器
         void onReturnOption(String option1);
     }
@@ -44,7 +48,7 @@ public class PickViewHelper {
      * @param context
      * @param listener
      */
-    public static void showDefaultTimePicker(Activity context, OnDataReturnListener listener) {
+    public static void showDefaultTimePicker(Activity context, OnDateReturnListener listener) {
         //时间选择器
         TimePickerView pvTime = new TimePickerBuilder(context, new OnTimeSelectListener() {
             @Override
@@ -52,6 +56,7 @@ public class PickViewHelper {
                 listener.onReturnDate(date);
             }
         }).build();
+        pvTime.show();
     }
 
     /**
@@ -63,7 +68,7 @@ public class PickViewHelper {
      * @param options3Items
      * @param listener
      */
-    public static void showDefaultThreeOptionPicker(Activity context, List<OptionModel> options1Items, List<OptionModel> options2Items, List<OptionModel> options3Items, OnDataReturnListener listener) {
+    public static void showDefaultThreeOptionPicker(Activity context, List<OptionModel> options1Items, List<OptionModel> options2Items, List<OptionModel> options3Items, OnThirdOptionReturnListener listener) {
         //条件选择器
         OptionsPickerView pvOptions = new OptionsPickerBuilder(context, new OnOptionsSelectListener() {
             @Override
@@ -90,7 +95,7 @@ public class PickViewHelper {
      * @param title
      * @param listener
      */
-    public static void showCustomTimePicker(Activity context, int startYear, int endYear, String title, OnDataReturnListener listener) {
+    public static void showCustomTimePicker(Activity context, int startYear, int endYear, String title, OnDateReturnListener listener) {
         /**
          * @description
          *
@@ -144,6 +149,7 @@ public class PickViewHelper {
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
                 .setDividerColor(0xFF24AD9D)
                 .build();
+        pvCustomTime.show();
     }
 
 
@@ -154,7 +160,7 @@ public class PickViewHelper {
      * @param options1Items
      * @param listener
      */
-    public static void showCustomOneOptionPicker(Activity context, List<OptionModel> options1Items, String title, OnDataReturnListener listener) {
+    public static void showCustomOneOptionPicker(Activity context, List<OptionModel> options1Items, String title, OnOptionReturnListener listener) {
         pvCustomOptions = new OptionsPickerBuilder(context, new OnOptionsSelectListener() {
             @Override
             public void onOptionsSelect(int options1, int option2, int options3, View v) {
@@ -185,10 +191,11 @@ public class PickViewHelper {
                         });
                     }
                 })
-                .isDialog(true)
+                .isDialog(false)
                 .setOutSideCancelable(true)
                 .build();
         pvCustomOptions.setPicker(options1Items);//添加数据
+        pvCustomOptions.show();
     }
 
 

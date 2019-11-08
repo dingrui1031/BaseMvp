@@ -20,6 +20,8 @@ import android.view.WindowManager;
 import java.io.File;
 import java.util.List;
 
+import cn.dr.basemvp.app.BaseApplication;
+
 /**
  * 应用工具类
  */
@@ -355,7 +357,14 @@ public final class AppUtils {
         context.startActivity(intent);
     }
 
-
+    /**
+     * 得到应用程序的包名
+     *
+     * @return
+     */
+    public static String getPackageName() {
+        return BaseApplication.getContext().getPackageName();
+    }
 
 
 }
