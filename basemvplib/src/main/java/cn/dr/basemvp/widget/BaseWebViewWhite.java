@@ -33,7 +33,7 @@ public class BaseWebViewWhite extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_base_webview;
+        return R.layout.activity_base_webview_white;
     }
 
     @Override
@@ -58,7 +58,9 @@ public class BaseWebViewWhite extends BaseActivity {
         mTvTitle.setText(mTitle == null ? "" : mTitle);
         mIvBack.setOnClickListener(v -> {
             if (mAgent_back) {
-                if (!mAgentWeb.back()) {
+                if (mAgentWeb != null && !mAgentWeb.back()) {
+                    finish();
+                }else {
                     finish();
                 }
             } else {
@@ -115,7 +117,9 @@ public class BaseWebViewWhite extends BaseActivity {
     @Override
     public void onBackPressed() {
         if (mAgent_back) {
-            if (!mAgentWeb.back()) {
+            if (mAgentWeb != null && !mAgentWeb.back()) {
+                finish();
+            }else {
                 finish();
             }
         } else {

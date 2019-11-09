@@ -58,7 +58,9 @@ public class BaseWebView extends BaseActivity {
         mTvTitle.setText(mTitle == null ? "" : mTitle);
         mIvBack.setOnClickListener(v -> {
             if (mAgent_back) {
-                if (!mAgentWeb.back()) {
+                if (mAgentWeb != null && !mAgentWeb.back()) {
+                    finish();
+                } else {
                     finish();
                 }
             } else {
@@ -115,8 +117,10 @@ public class BaseWebView extends BaseActivity {
     @Override
     public void onBackPressed() {
         if (mAgent_back) {
-            if (!mAgentWeb.back()) {
+            if (mAgentWeb != null && !mAgentWeb.back()) {
                 finish();
+            } else {
+                super.onBackPressed();
             }
         } else {
             finish();

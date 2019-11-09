@@ -84,31 +84,33 @@ public class AppUpdateUtils {
                             JSONObject jsonObject = new JSONObject(json);
                             JSONObject info = jsonObject.optJSONObject("data");
                             Log.e("info", info.toString());
-                            if (!info.optString("code").equals("")) {
-                                int code = Integer.parseInt(info.optString("code"));
-                                int versionCode = com.vector.update_app.utils.AppUpdateUtils.getVersionCode(activity);
-                                if (code > versionCode) {
-                                    isUpdate = "Yes";
-                                } else {
-                                    isUpdate = "No";
+                            if (info.length() != 0) {
+                                if (!info.optString("code").equals("")) {
+                                    int code = Integer.parseInt(info.optString("code"));
+                                    int versionCode = com.vector.update_app.utils.AppUpdateUtils.getVersionCode(activity);
+                                    if (code > versionCode) {
+                                        isUpdate = "Yes";
+                                    } else {
+                                        isUpdate = "No";
+                                    }
+                                    updateAppBean
+                                            //（必须）是否更新Yes,No
+                                            .setUpdate(isUpdate)
+                                            //（必须）新版本号，
+                                            .setNewVersion(info.optString("name"))
+                                            //（必须）下载地址 返回的是id
+                                            .setApkFileUrl(info.optString("file"))
+                                            //测试下载路径是重定向路径
+//                                    .setApkFileUrl("http://openbox.mobilem.360.cn/index/d/sid/3282847")
+                                            .setUpdateLog(info.optString("content"))
+                                            //大小，不设置不显示大小，可以不设置
+//                                    .setTargetSize(jsonObject.optString("target_size"))
+                                            //是否强制更新，可以不设置
+                                            .setConstraint(true);
+                                    //设置md5，可以不设置
+//                                    .setNewMd5(jsonObject.optString("new_md51"));
                                 }
                             }
-                            updateAppBean
-                                    //（必须）是否更新Yes,No
-                                    .setUpdate(isUpdate)
-                                    //（必须）新版本号，
-                                    .setNewVersion(info.optString("name"))
-                                    //（必须）下载地址 返回的是id
-                                    .setApkFileUrl(info.optString("file"))
-                                    //测试下载路径是重定向路径
-//                                    .setApkFileUrl("http://openbox.mobilem.360.cn/index/d/sid/3282847")
-                                    .setUpdateLog(info.optString("content"))
-                                    //大小，不设置不显示大小，可以不设置
-//                                    .setTargetSize(jsonObject.optString("target_size"))
-                                    //是否强制更新，可以不设置
-                                    .setConstraint(true);
-                            //设置md5，可以不设置
-//                                    .setNewMd5(jsonObject.optString("new_md51"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
