@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
 
@@ -29,6 +30,8 @@ public class BaseWebView extends BaseActivity {
     private TextView mTvTitle;
     private LinearLayout mContainer;
     private boolean mAgent_back;
+    private int mTitleBarColor;
+    private boolean mIsDarkMode;
 
     @Override
     protected int getLayoutId() {
@@ -37,6 +40,8 @@ public class BaseWebView extends BaseActivity {
 
     @Override
     protected void getIntent(Intent intent) {
+        mTitleBarColor = intent.getIntExtra("color",R.color.themeColor);
+        mIsDarkMode = intent.getBooleanExtra("isDarkMode",false);
         mTitle = intent.getStringExtra("title");
         mUrl = intent.getStringExtra("url");
         mAgent_back = intent.getBooleanExtra("agent_back", true);//是否再web返回上一页之后再结束
@@ -44,6 +49,14 @@ public class BaseWebView extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        StatusBarUtil.setColor(mActivity, CommonUtils.getColor(mTitleBarColor), 0);
+        if (mIsDarkMode) {
+            //白字
+            StatusBarUtil.setDarkMode(mActivity);
+        }else {
+            //黑字
+            StatusBarUtil.setLightMode(mActivity);
+        }
         mIvBack = findViewById(R.id.iv_back);
         mTvTitle = findViewById(R.id.tv_title);
         mContainer = findViewById(R.id.container);
