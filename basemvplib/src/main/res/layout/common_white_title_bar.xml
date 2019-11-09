@@ -26,7 +26,7 @@
         android:lines="1"
         android:ellipsize="end"
         android:text=""
-        android:textColor="@color/white_ff"
+        android:textColor="@color/black_33"
         android:textSize="18sp" />
 
 </RelativeLayout>
