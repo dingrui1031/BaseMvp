@@ -18,6 +18,9 @@
         <activity
             android:name="cn.dr.basemvp.widget.pdf.PdfActivity"
             android:launchMode="singleTask" />
+        <activity
+            android:name="cn.dr.basemvp.widget.BaseWebView"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

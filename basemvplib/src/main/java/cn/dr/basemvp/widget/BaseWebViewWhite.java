@@ -21,7 +21,7 @@ import cn.dr.basemvp.utils.ToastUtils;
  * Created by dingrui 2019/10/31
  */
 
-public class BaseWebView extends BaseActivity {
+public class BaseWebViewWhite extends BaseActivity {
 
     private String mTitle;
     private String mUrl;
@@ -45,9 +45,9 @@ public class BaseWebView extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        StatusBarUtil.setColor(mActivity, CommonUtils.getColor(R.color.themeColor), 0);
-        //白字
-        StatusBarUtil.setDarkMode(mActivity);
+        StatusBarUtil.setColor(mActivity, CommonUtils.getColor(R.color.white_ff), 0);
+        //黑字
+        StatusBarUtil.setLightMode(mActivity);
         mIvBack = findViewById(R.id.iv_back);
         mTvTitle = findViewById(R.id.tv_title);
         mContainer = findViewById(R.id.container);
