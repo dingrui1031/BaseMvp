@@ -17,6 +17,10 @@
             android:name=".widget.BaseWebView"
             android:launchMode="singleTask" />
 
+        <activity
+            android:name=".widget.BaseWebViewWhite"
+            android:launchMode="singleTask" />
+
     </application>
 
 </manifest>
