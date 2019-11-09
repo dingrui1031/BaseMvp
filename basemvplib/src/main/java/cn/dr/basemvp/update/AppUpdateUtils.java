@@ -84,12 +84,14 @@ public class AppUpdateUtils {
                             JSONObject jsonObject = new JSONObject(json);
                             JSONObject info = jsonObject.optJSONObject("data");
                             Log.e("info", info.toString());
-                            int code = Integer.parseInt(info.optString("code"));
-                            int versionCode = com.vector.update_app.utils.AppUpdateUtils.getVersionCode(activity);
-                            if (code > versionCode) {
-                                isUpdate = "Yes";
-                            } else {
-                                isUpdate = "No";
+                            if (!info.optString("code").equals("")) {
+                                int code = Integer.parseInt(info.optString("code"));
+                                int versionCode = com.vector.update_app.utils.AppUpdateUtils.getVersionCode(activity);
+                                if (code > versionCode) {
+                                    isUpdate = "Yes";
+                                } else {
+                                    isUpdate = "No";
+                                }
                             }
                             updateAppBean
                                     //（必须）是否更新Yes,No

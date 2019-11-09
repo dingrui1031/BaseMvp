@@ -1,30 +1,30 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
+ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
 	package
 		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:3:5-28
 		INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
 		INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
-		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
+		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
 		INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:11-57
 	android:versionCode
 		INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
-		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-22:12
+		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:1:1-26:12
 		INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:2:5-63
 application
-ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:5:5-20:19
+ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:5:5-24:19
 	android:supportsRtl
 		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:8:9-35
 	android:label
@@ -47,6 +47,12 @@ ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
 		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:18:13-44
 	android:name
 		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:17:13-47
+activity#cn.dr.basemvp.widget.BaseWebViewWhite
+ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:20:9-22:47
+	android:launchMode
+		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:22:13-44
+	android:name
+		ADDED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml:21:13-52
 uses-sdk
 INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\dingrui\WorkSpace1\Base360\basemvplib\src\main\AndroidManifest.xml
