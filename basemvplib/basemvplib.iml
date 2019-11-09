@@ -195,6 +195,5 @@
     <orderEntry type="library" name="Gradle: com.squareup.leakcanary:leakcanary-android:1.5.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.leakcanary:leakcanary-analyzer:1.5.4@aar" level="project" />
     <orderEntry type="module" module-name="update-app" />
-    <orderEntry type="module" module-name="update-app" />
   </component>
 </module>
