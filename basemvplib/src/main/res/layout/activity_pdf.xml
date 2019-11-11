@@ -3,9 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ll_root"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/common_title_bar"/>
+    <include layout="@layout/common_white_title_bar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider" />
+
 
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfView"

@@ -54,6 +54,12 @@
         <activity
             android:name="cn.dr.basemvp.widget.pdf.PdfActivity"
             android:launchMode="singleTask" />
+        <activity
+            android:name="cn.dr.basemvp.widget.BaseWebView"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="cn.dr.basemvp.widget.BaseWebViewWhite"
+            android:launchMode="singleTask" />
 
         <provider
             android:name="com.luck.picture.lib.PictureFileProvider"
