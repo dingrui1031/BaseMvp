@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.barteksc.pdfviewer.PDFView;
-import com.jaeger.library.StatusBarUtil;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;
@@ -18,7 +17,6 @@ import butterknife.BindView;
 import cn.dr.basemvp.R;
 import cn.dr.basemvp.R2;
 import cn.dr.basemvp.base.BaseActivity;
-import cn.dr.basemvp.utils.CommonUtils;
 import cn.dr.basemvp.utils.PermissonUtils;
 
 /**
@@ -46,8 +44,6 @@ public class PdfActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        StatusBarUtil.setColor(mActivity, CommonUtils.getColor(R.color.white_ff), 0);
-        StatusBarUtil.setLightMode(mActivity);
         tvTitle.setText("报告");
     }
 
@@ -81,7 +77,7 @@ public class PdfActivity extends BaseActivity {
     private void downFile() {
         FileDownloader.setup(mActivity);
         FileDownloader.getImpl().create(mUrl)
-                .setPath(getExternalFilesDir("base360_pdf_report") + mUrl + ".pdf")
+                .setPath(getExternalFilesDir("bafy_doctor_pdf_report") + mUrl + ".pdf")
                 .setListener(new FileDownloadListener() {
                     @Override
                     protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
@@ -100,7 +96,7 @@ public class PdfActivity extends BaseActivity {
                         pdfView.fromFile(file)
                                 .enableSwipe(true)
                                 .enableDoubletap(true)
-                                .defaultPage(1)
+                                .defaultPage(0)
                                 .load();
                     }
 

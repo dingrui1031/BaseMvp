@@ -6,9 +6,9 @@ package cn.dr.basemvp.app;
 public class AppConfig {
 
     //基础url
-    public static final String BASE_URL = "https://test.basecare.cn";
-//    public static final String BASE_URL = "https://360api.bioerp.com";
+//    public static final String BASE_URL = "https://test.basecare.cn";
+    public static final String BASE_URL = "https://bafy-api.basecare.cn";
     //版本更新
-    public static final String VERSION_UPDATE_URL = "/bk360/doctor/versions";
+    public static final String VERSION_UPDATE_URL = "/gy/doctor/versions";
 
 }

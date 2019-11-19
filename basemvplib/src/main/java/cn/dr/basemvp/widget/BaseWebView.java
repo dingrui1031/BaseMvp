@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jaeger.library.StatusBarUtil;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.AgentWebConfig;
 
@@ -45,9 +44,6 @@ public class BaseWebView extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        StatusBarUtil.setColor(mActivity, CommonUtils.getColor(R.color.themeColor), 0);
-        //白字
-        StatusBarUtil.setDarkMode(mActivity);
         mIvBack = findViewById(R.id.iv_back);
         mTvTitle = findViewById(R.id.tv_title);
         mContainer = findViewById(R.id.container);
@@ -58,9 +54,9 @@ public class BaseWebView extends BaseActivity {
         mTvTitle.setText(mTitle == null ? "" : mTitle);
         mIvBack.setOnClickListener(v -> {
             if (mAgent_back) {
-                if (mAgentWeb != null && !mAgentWeb.back()) {
+                if (mAgentWeb != null &&!mAgentWeb.back()) {
                     finish();
-                } else {
+                }else {
                     finish();
                 }
             } else {
@@ -117,10 +113,10 @@ public class BaseWebView extends BaseActivity {
     @Override
     public void onBackPressed() {
         if (mAgent_back) {
-            if (mAgentWeb != null && !mAgentWeb.back()) {
+            if (mAgentWeb != null &&!mAgentWeb.back()) {
                 finish();
-            } else {
-                super.onBackPressed();
+            }else {
+                finish();
             }
         } else {
             finish();

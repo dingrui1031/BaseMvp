@@ -133,14 +133,5 @@ public class CommonUtils {
         return getResource().getDimension(resId);
     }
 
-    /**
-     * 隐藏手机号中间4位
-     * @param phone
-     * @return
-     */
-    public static String setPhoneEncode(String phone) {
-        return phone.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
-    }
-
 
 }

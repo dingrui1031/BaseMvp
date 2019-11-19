@@ -24,9 +24,9 @@ public class FileUtils {
 
     public static final String ROOT_DIR = "Android/data/"
             + AppUtils.getPackageName();
-    public static final String DOWNLOAD_DIR = "base360_download";
-    public static final String CACHE_DIR = "base360_cache";
-    public static final String ICON_DIR = "base360_icon";
+    public static final String DOWNLOAD_DIR = "bafy_doctor_download";
+    public static final String CACHE_DIR = "bafy_doctor_cache";
+    public static final String ICON_DIR = "bafy_doctor_icon";
 
     /**
      * 判断SD卡是否挂载
